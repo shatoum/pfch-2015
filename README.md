@@ -43,4 +43,5 @@ Note that "\n" is necessary; otherwise, your csv will be a mess. \n and "" provi
 Either concatenate in Excel or try to use regex to piece together a full URL needed to view each individual photograph (see documentation). Here's the first step for using regex:
         
        our_text = a_record['fields']['primary_image_id']
-
+       p = re.compile('^[0-9]{4}..')
+       m = p.findall(our_text)
