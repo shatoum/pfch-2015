@@ -44,9 +44,3 @@ Either concatenate in Excel or try to use regex to piece together a full URL nee
         
        our_text = a_record['fields']['primary_image_id']
 
-Compile pattern with regex:
-            p = re.compile('^[0-9]{4}..')
-
-"Broad approach to finding all texts that match pattern":
-            m = p.findall(our_text)
- 
