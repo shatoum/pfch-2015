@@ -10,7 +10,7 @@
   To write to csv:     
   
        with open("NAME OF PROJECT.csv","w") as a_file:
-  The range function = "start, stop[, step])" start=0, stop=TOTAL RECORDS 
+  The range function = "start, stop[, step])" start=0, stop=TOTAL RECORDS, step=45. 45 is the greatest number of items the V&A museum allows you to view at once. When you run your script, you will see records appear in groups of 45.
        
        offsetvalues = range(0, TOTAL RECORDS, 45)
     
@@ -18,15 +18,15 @@
     
        response_dict = {}
    
-  Set parameters;
+  Set parameters:
   
     for offsetval in offsetvalues:
-        payload = { 'q' : "COLLECTION OF INTEREST", 'images' : 1, 'limit' : 45 (which is the greatest number of items you can view at          once), 'offset' : offsetval }
+        payload = { 'q' : "COLLECTION OF INTEREST", 'images' : 1, 'limit' : 45, 'offset' : offsetval }
         r = requests.get("http://www.vam.ac.uk/api/json/museumobject/", params=payload)
         response_dict = json.loads(r.text)
         for a_record in response_dict['records']:
         
-You can print(a_record) to make sure it works
+You can print(a_record) to make sure it works.
         
 Now create rows for metadata you want and save everything to a csv:
         
@@ -37,7 +37,8 @@ Now create rows for metadata you want and save everything to a csv:
             
             row = [str(x).replace("\n", "") for x in row]
 Note that "\n" is necessary; otherwise, your csv will be a mess. \n and "" provide spaces between words
-            a_file.write(','.join(row)+'\n')
+           
+           a_file.write(','.join(row)+'\n')
        
 Either concatenate in Excel or try to use regex to piece together a URL to view photographs. Here's the first step for using          regex:
         
