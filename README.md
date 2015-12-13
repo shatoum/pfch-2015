@@ -40,13 +40,13 @@ Note that "\n" is necessary; otherwise, your csv will be a mess. \n and "" provi
            
            a_file.write(','.join(row)+'\n')
        
-Either concatenate in Excel or try to use regex to piece together a URL to view photographs. Here's the first step for using          regex:
+Either concatenate in Excel or try to use regex to piece together a full URL needed to view each individual photograph (see documentation). Here's the first step for using regex:
         
        our_text = a_record['fields']['primary_image_id']
-Compile pattern with regex
-        p = re.compile('^[0-9]{4}..')
 
-"Broad approach to finding all texts that match pattern"
-        m = p.findall(our_text)
-    
+Compile pattern with regex:
+            p = re.compile('^[0-9]{4}..')
 
+"Broad approach to finding all texts that match pattern":
+            m = p.findall(our_text)
+ 
