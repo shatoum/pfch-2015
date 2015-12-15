@@ -10,6 +10,8 @@ For my visualization, I chose to work with Northwestern University Knight Lab's 
 
 Lastly, since it was my main reason for choosing the Tripe collection, I wanted to incorporate latitude and longitude somehow. I concatenated the latitude and longitude and a standard Google Maps URL to come up with a direct link to that latitude and longitude in Google Maps. It seems that the given latitudes and longitudes are only for the city, not the exact location of where the photograph was taken. Regardless, it is interesting to view the setting of the mid-19th century photograph in a modern context. Sadly, one can’t quite see these incredibly constructed monuments and architecture in Google Maps today.
 
+#Here's how to use the API and write your data to a csv:
+
  
 
        import requests
