@@ -1,6 +1,6 @@
 #How to use the Victoria and Albert Museum's API
 #Detailed API documentation is available at: http://www.vam.ac.uk/api/
-For my project, I used the Victoria & Albert Museum’s API (http://www.vam.ac.uk/api/). I found the API to be more usable than other museum APIs because it offers a Query Builder, which allowed me to build a URL; the Builder made it clear which parameters I needed to use when writing my script.
+For my project, I used the Victoria & Albert Museum’s API (http://www.vam.ac.uk/api/). I found the API to be more usable than other museum APIs because it offers a Query Builder (http://www.vam.ac.uk/api/qb), which allowed me to build a URL; the Builder made it clear which parameters I needed to use when writing my script.
  
 I chose to work with the V&A’s collection of Linnaeus Tripe’s photography of South India and Burma (Myanmar) because it offered latitude and longitude metadata, and my plan was to visually map where each photograph was taken. Unfortunately, after mapping my data in CartoDB, the photographs were concentrated in only a few areas and weren’t visually appealing. 
 
@@ -56,3 +56,4 @@ Either concatenate in Excel or try to use regex to piece together a full URL nee
        our_text = a_record['fields']['primary_image_id']
        p = re.compile('^[0-9]{4}..')
        m = p.findall(our_text)
+
